@@ -3,32 +3,35 @@
 
 <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script-->
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+    <script src="https://www.gstatic.com/firebasejs/5.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.0.0/firebaseui.js"></script>
+    <script src="config.js"></script>
+    <script src="common.js"></script>
+    
+    
 </head>
 <!-- Include the above in your HEAD t-->
 
 <body background="JA.png">
+
     <div class="container" style="color:#a50e72;">
         <div class="row">
             <div class="col-md-7 ">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4 >Perfil de Usuario</h4>
+                        <h4>Perfil de Usuario</h4>
                     </div>
                     <div class="panel-body">
-
                         <div class="box box-info">
-
                             <div class="box-body">
                                 <div class="col-sm-6">
                                     <div align="center">
-                                        <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1"
-                                            class="img-circle img-responsive">
-
+                                        <img alt="User Pic"  id="profile-image1"class="img-circle img-responsive">
                                         <input id="profile-image-upload" class="hidden" type="file">
-                                        <div style="color:#999;">click here to change profile image</div>
                                         <!--Upload Image Js And Css-->
 
                                     </div>
@@ -36,47 +39,47 @@
                                     <!-- /input-group -->
                                 </div>
                                 <div class="col-sm-6" style="color:#a50e72;">
-                                    <h4>Jahaziel Moreno</h4>
-                                    </span>
-                                    <span>
-                                        <p>Ingeniero en Sistemas</p>
+                                    <h4 id="NombrePerfilP"></h4>
                                     </span>
                                 </div>
                                 <div class="clearfix"></div>
                                 <hr style="margin:5px 0 5px 0;">
 
                                 <div class="col-sm-5 col-xs-6 tital ">ID de Usuario:</div>
-                                <div class="col-sm-7 col-xs-6 ">12345</div>
+                                <div class="col-sm-7 col-xs-6 ">
+                                    <p1 id="IDUser"></p1>
+                                </div>
                                 <div class="clearfix"></div>
                                 <div class="bot-border"></div>
 
-                                <div class="col-sm-5 col-xs-6 tital ">Primer Nombre:</div>
-                                <div class="col-sm-7 col-xs-6 ">Jahaziel</div>
+                                <div class="col-sm-5 col-xs-6 tital ">Nombre de Usuario:</div>
+                                <div class="col-sm-7 col-xs-6 ">
+                                    <p1 id = "nameLow"></p1>
+                                </div>
                                 <div class="clearfix"></div>
                                 <div class="bot-border"></div>
 
-                                <div class="col-sm-5 col-xs-6 tital ">Apellido:</div>
-                                <div class="col-sm-7"> Moreno</div>
+                                <div class="col-sm-5 col-xs-6 tital ">Email:</div>
+                                <div class="col-sm-7" >
+                                    <p1 id="emailP"></p1>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="bot-border"></div>
+                                
+                                <div class="col-sm-5 col-xs-6 tital ">Numero de Telefono:</div>
+                                <div class="col-sm-7" >
+                                    <p1 id="Cell"></p1>
+                                </div>
                                 <div class="clearfix"></div>
                                 <div class="bot-border"></div>
 
-                                <div class="col-sm-5 col-xs-6 tital ">Nacionalidad:</div>
-                                <div class="col-sm-7">Hondureña</div>
+
+                                <div class="col-sm-5 col-xs-6 tital ">URL Foto:</div>
+                                <div class="col-sm-7">
+                                    <p1 id ="urlP" ></p1>
+                                </div>
                                 <div class="clearfix"></div>
                                 <div class="bot-border"></div>
-
-                                <div class="col-sm-5 col-xs-6 tital ">Mensajes Publicos:</div>
-                                <div class="col-sm-7">4</div>
-                                <div class="clearfix"></div>
-                                <div class="bot-border"></div>
-
-                                <div class="col-sm-5 col-xs-6 tital ">Mensajes Privados:</div>
-                                <div class="col-sm-7">9</div>
-                                <div class="clearfix"></div>
-                                <div class="bot-border"></div>
-
-                                <div class="col-sm-5 col-xs-6 tital ">Religion:</div>
-                                <div class="col-sm-7">Pastafarismo</div>
 
                                 <!-- /.box-body -->
                             </div>
@@ -88,15 +91,18 @@
                 </div>
             </div>
             <script>
-                $(function () {
-                    $('#profile-image1').on('click', function () {
-                        $('#profile-image-upload').click();
+                $(function photo () {
+                    $("#profile-image1").on("click", function () {
+                        $("#profile-image-upload").click();
                     });
                 });       
             </script>
 
         </div>
+        <script src="MetodosP.js"></script>
     </div>
+   
+    
 </body>
 
 </html>

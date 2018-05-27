@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>SocialJazz</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -26,13 +27,13 @@
         <nav>
             <ul>
                 <li>
-                    <a href="">Muro</a>
+                    <a href="Muro.html">Muro</a>
                 </li>
                 <li>
                     <a href="Perfil.html">Perfil De Usuario</a>
                 </li>
                 <li>
-                    <a href="Muro.html">Mensajes</a>
+                    <a href="">Mensajes Privados</a>
                 </li>
             </ul>
         </nav>
@@ -40,18 +41,20 @@
 
     <div>
 
-        <h1 align="left">Muro SocialJazz</h1>
-        <p1>Mensajes</p1>>
-        <h2 id="heading">Buu</h2>
+        <h1 align="left" style="color: rgba(250, 255, 255, 0.89)";>Muro SocialJazz</h1>
+
         <textarea id="mainText" placeholder="Escribir Mensaje"></textarea>
-        <button id="submitBtn" onclick="submitClick()">Publicar Mensaje</button>
+        <button id="submitBtn" onclick="submitClick()">Publicar JazzTweet</button>
+        <!--p id="message"></p-->
         
+        <div align="left" class= "panel-body" id = "Muro" background: "JA2.png";></div>    
     </div>
+
+    
+    <script src = "https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="Metodos.js"></script>
     
 
-
-    
 </body>
 
 </html>

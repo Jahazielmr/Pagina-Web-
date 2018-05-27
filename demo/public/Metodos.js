@@ -1,47 +1,47 @@
-//window.alert("Funciona");
-
 var mainText = document.getElementById("mainText");
 var submitBtn = document.getElementById("submitBtn");
 var heading = document.getElementById("heading");
+var IDU = document.getElementById("IDUser");
 var Mensaje = mainText.value;
 
-var headingRef = firebase.database().ref().child("heading");
-
-headingRef.on('value', function(datasnapshot){
-    heading.innerText= datasnapshot.val();
-})
-
-/*function submitClick(){
-    var firebaseRef = firebase.database().ref();
-    firebaseRef.child("Mensajes").set("Valor");
-    firebaseRef.Push().set(Mensaje);
-}*/
+//para perfil
+/*var headingRef = firebase.database().ref().child("Usuarios");
 
 
 
+headingRef.on('value', function (datasnapshot) {
+    //heading.innerText = datasnapshot.val();
+
+        var id = snap.child("UID").val();
+        IDU.textContent= id;
+
+    
+})*/
+//
+//escribir mensajes y guardarlos en la base de datos
 function submitClick() {
     var firebaseRef = firebase.database().ref();
     var messageText = mainText.value;
 
-    firebase.auth().onAuthStateChanged(function(user){
-        if(user){
-            var ref= firebase.database().ref().child("Mensajes");
-            
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            var ref = firebase.database().ref().child("Mensajes");
+
             ref.push().set({
-               Usuario: user.uid,
-               Mensaje: messageText 
+                Usuario: user.displayName,
+                Mensaje: messageText
             });
-        }else{
+        } else {
             window.alert("Error en el registro");
         }
     });
-    window.alert("Su mensaje no pudo ser enviado debido a que usted es demasiado HOMOSEXUAL");
-    messageText.textContent= "";
+    window.alert("Su mensaje fue enviado con exito");
+    messageText.innerText= "";
 }
 
 /*var user = firebase.auth().currentUser;
 var name, email, photoUrl, uid, emailVerified;
-
+ 
 if (user != null) {
   name = user.displayName;
   email = user.email;
@@ -51,11 +51,32 @@ if (user != null) {
 }
   */
 
-firebase.auth().onAuthStateChanged(function(user){
-    if(user){
-        window.alert("Bienvenido a la Verga de Jazz"+user.displayName+"El Traga Semen");
-    } else{
+//autentificacion INSTANCIA usuario y confirmacion de conexion
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        window.alert("Bienvenido al muro publico" + user.displayName + ", aqui podra ver mensajes de todas las personas del mundo");
+    } else {
         window.alert("No esta log in");
+        href= "index.html";
     }
 })
 
+//leer de la base de datos y ponerlos en el panel muro
+$(document).ready(function () {
+
+    var messageRef = firebase.database().ref().child("Mensajes");
+
+    messageRef.on("child_added", snap => {
+        var id = snap.child("Usuario").val();
+        var message = snap.child("Mensaje").val();
+
+        var string = "<div style='background-color: rgba(148, 105, 168, 0.788)'; class='demo-card-wide mdl-card mdl-shadow--2dp'>"
+            + "<div class='mdl-card__title'>"
+            + "<h2 style='color: rgba(250, 255, 255, 0.89)'; class='mdl-card__title-text'>"
+            + message + "</h2></div><div style='color: rgba(250, 255, 255, 0.89)'; class='mdl-card__title-text'>"
+            + id + "</div></div><p1 style='color: rgba(230, 131, 66, 0.788)';>.</p1>"
+        $("#Muro").append(string
+
+        );
+    });
+});
