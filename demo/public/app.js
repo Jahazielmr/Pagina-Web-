@@ -120,6 +120,18 @@ var handleSignedInUser = function (user) {
   document.getElementById('name').textContent = user.displayName;
   document.getElementById('email').textContent = user.email;
   document.getElementById('phone').textContent = user.phoneNumber;
+  
+  var newUser = true;
+  var ref = firebase.database().ref();
+
+  if (newUser) {
+    ref.child("Usuarios").child(user.uid).child("UID").set(user.uid);
+    ref.child("Usuarios").child(user.uid).child("Name").set(user.displayName);
+    ref.child("Usuarios").child(user.uid).child("Email").set(user.email);
+    ref.child("Usuarios").child(user.uid).child("Phone Number").set(user.phoneNumber);
+    ref.child("Usuarios").child(user.uid).child("Photo URL").set(user.photoURL);
+  }
+  
   if (user.photoURL) {
     var photoURL = user.photoURL;
     // Append size to the photo URL for Google hosted images to avoid requesting
@@ -235,11 +247,5 @@ controller("ListCtrl", function ($scope, Mensaje) {
   };
 })
 */
-
-
-
-
-
-
 
 
