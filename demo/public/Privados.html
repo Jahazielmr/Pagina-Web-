@@ -23,40 +23,37 @@
 </head>
 
 <body background="JA.png">
-    <div id="container">
-        <nav>
-            <ul>
-                <li>
-                    <a href="Muro.html">Muro</a>
-                </li>
-                <li>
-                    <a href="Perfil.html">Perfil De Usuario</a>
-                </li>
-                <li>
-                    <a href="Privados.html">Muro Privado</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
 
-    <div>
+        <!--Mostrar los mensajes Privados-->
+        <div id="container">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="Muro.html">Muro</a>
+                        </li>
+                        <li>
+                            <a href="Perfil.html">Perfil De Usuario</a>
+                        </li>
+                        <li>
+                            <a href="Privados.html">Muro Privado</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        
+            <div>
+        
+                <h1 align="left" style="color: rgba(250, 255, 255, 0.89)" ;>Muro Privado Jazz</h1>
+        
+                <div align="left" class="panel-body" id="MuroPrivado" background: "JA2.png";></div>
+            </div>
+        
+            <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+            <script src="MetodosPr.js"></script>        
+        
 
-        <h1 align="left" style="color: rgba(250, 255, 255, 0.89)" ;>Muro SocialJazz</h1>
 
-        <textarea id="mainText" placeholder="Escribir Mensaje"></textarea>
-        <p>
-            Privado<input type="radio"  name="Tipomensaje" value="1"/><br/>
-            Publico<input type="radio"  name="Tipomensaje" value="2"/><br/>
-            
-        </p>
-        <button id="submitBtn" onclick="submitClick()">Publicar JazzTweet</button>
-        <!--p id="message"></p-->
 
-        <div align="left" class="panel-body" id="Muro" background: "JA2.png";></div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-    <script src="Metodos.js"></script>
 
 
 </body>

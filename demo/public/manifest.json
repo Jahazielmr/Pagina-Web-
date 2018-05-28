@@ -1,11 +1,19 @@
 {
-  "name": "FirebaseUI Demo",
-  "short_name": "FirebaseUIDemo",
+  "name": "Jazz Style",
+  "short_name": "Jazz",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fff",
   "lang": "en-US",
-  "description": "FirebaseUI Demo application.",
+  "icons": [
+    {
+      "src": "JAZZPNG.jpg",
+      "type": "image/jpg",
+      "sizes": "600x600" 
+    } 
+  ],
+  
+  "description": "Jazz is the Ass",
   "prefer_related_applications": false,
   "theme_color": "#fff",
   "scope": "/",
