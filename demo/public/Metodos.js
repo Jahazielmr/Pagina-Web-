@@ -64,8 +64,11 @@ function submitClick() {
         } else {
             window.alert("Error en el registro");
         }
+
+        
     });
     //messageText.innerText= "";
+    $('#mainText').val('');
 }
 
 /*var user = firebase.auth().currentUser;
